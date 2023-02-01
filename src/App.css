@@ -16,3 +16,18 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.StartingPageContainer a {
+  text-decoration: none;
+  color: white;
+  background-color: purple;
+  padding: 2vw;
+  border-radius: 10px;
+}
+.StartingPageContainer a:hover {
+  background-color: rgba(128, 0, 128, 0.733);
+}
+
+.StartingPageContainer a:hover {
+  background-color: rgba(128, 0, 128, 0.493);
+}
