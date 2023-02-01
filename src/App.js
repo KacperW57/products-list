@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./App.css";
 import styled from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -38,17 +39,29 @@ const Main = styled.main`
 `;
 
 function App() {
+  const [idFilter, setIdFilter] = useState("");
+  function handleInp(e) {
+    setIdFilter(e.target.value);
+  }
+  function removeFilter() {
+    setIdFilter("");
+  }
   return (
     <BrowserRouter>
       <div className="App">
         <Header>
           <Label htmlFor="filterById">Filter by Id:</Label>
-          <Input type="number" id="filterById" />
+          <Input type="number" id="filterById" onChange={handleInp} />
         </Header>
         <Main>
           <Routes>
             <Route path="/" element={<StartingPage />} />
-            <Route path="/page/:page" element={<ProductsList />} />
+            <Route
+              path="/page/:page"
+              element={
+                <ProductsList filter={idFilter} removeFilter={removeFilter} />
+              }
+            />
           </Routes>
         </Main>
       </div>
