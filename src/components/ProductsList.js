@@ -20,11 +20,23 @@ const ArrowPrevious = styled.img`
   width: 3vw;
   margin: 2vw;
   transform: rotate(0.75turn);
+  &:hover {
+    transform: rotate(0.75turn) scale(1.2);
+  }
+  &:active {
+    transform: rotate(0.25turn) scale(0.8);
+  }
 `;
 const ArrowNext = styled.img`
   width: 3vw;
   margin: 2vw;
   transform: rotate(0.25turn);
+  &:hover {
+    transform: rotate(0.25turn) scale(1.2);
+  }
+  &:active {
+    transform: rotate(0.25turn) scale(0.8);
+  }
 `;
 
 export default function ProductsList(props) {
@@ -60,9 +72,17 @@ export default function ProductsList(props) {
   const productsTable = products.map((product) => {
     return (
       <Tr key={product.id} style={{ backgroundColor: `${product.color}` }}>
-        <Td>{product.id}</Td>
-        <Td>{product.name}</Td>
-        <Td>{product.year}</Td>
+        <Td>
+          <Link to={`/product/${product.id}`}>{product.id}</Link>
+        </Td>
+
+        <Td>
+          <Link to={`/product/${product.id}`}>{product.name}</Link>
+        </Td>
+
+        <Td>
+          <Link to={`/product/${product.id}`}>{product.year}</Link>
+        </Td>
       </Tr>
     );
   });
@@ -149,9 +169,15 @@ export default function ProductsList(props) {
           </thead>
           <tbody>
             <Tr style={{ backgroundColor: `${product.color}` }}>
-              <Td>{product.id}</Td>
-              <Td>{product.name}</Td>
-              <Td>{product.year}</Td>
+              <Td>
+                <Link to={`/product/${product.id}`}>{product.id}</Link>
+              </Td>
+              <Td>
+                <Link to={`/product/${product.id}`}>{product.name}</Link>
+              </Td>
+              <Td>
+                <Link to={`/product/${product.id}`}>{product.year}</Link>
+              </Td>
             </Tr>
           </tbody>
         </Table>

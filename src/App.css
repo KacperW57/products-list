@@ -31,3 +31,45 @@
 .StartingPageContainer a:hover {
   background-color: rgba(128, 0, 128, 0.493);
 }
+
+tbody a:link {
+  text-decoration: none;
+  color: white;
+}
+
+tbody a:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+tbody a:active {
+  color: rgba(0, 0, 0, 0.4);
+}
+tbody a:visited {
+  color: white;
+}
+
+.SingleProductInfo {
+  border-radius: 10px;
+  width: 40%;
+}
+
+.SingleProductInfo a:link {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 5px;
+  margin: 5px;
+}
+
+.SingleProductInfo a:hover {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.SingleProductInfo a:active {
+  color: rgba(0, 0, 0, 0.4);
+}
+.SingleProductInfo a:visited {
+  color: white;
+}
