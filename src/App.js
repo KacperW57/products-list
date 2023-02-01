@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductsList from "./components/ProductsList";
 import StartingPage from "./components/StartingPage";
+import SingleProduct from "./components/SingleProduct";
 
 const Header = styled.header`
   background-color: #282c34;
@@ -29,7 +30,7 @@ const Input = styled.input`
 `;
 const Main = styled.main`
   background-color: #282c34;
-  min-height: 50vh;
+  min-height: 89vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,6 +63,7 @@ function App() {
                 <ProductsList filter={idFilter} removeFilter={removeFilter} />
               }
             />
+            <Route path="/product/:id" element={<SingleProduct />} />
           </Routes>
         </Main>
       </div>
